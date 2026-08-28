@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Bodegón</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="wrap header-row">
+      <div class="brand">
+        <span class="mark"></span>
+        <span class="wordmark">El Bodegón</span>
+      </div>
+      <p class="tagline">Inventario y ganancias para tiendas de barrio</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap tabs">
+      <button class="tab active" id="tab-products" onclick="showSection('products')">Productos</button>
+      <button class="tab" id="tab-alerts" onclick="showSection('alerts')">Reposición</button>
+      <button class="tab" id="tab-profit" onclick="showSection('profit')">Rentabilidad</button>
+      <button class="tab" id="tab-breakeven" onclick="showSection('breakeven')">Punto de equilibrio</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <section id="products">
+      <p class="eyebrow">Paso 1</p>
+      <h2>Registro de productos</h2>
+      <p class="lead">Anota una sola vez cada producto de la tienda. Con estos cinco datos el
+        programa arma las tres respuestas de las otras pestañas.</p>
+
+      <form id="productForm">
+        <div class="grid">
+
+          <div class="field wide">
+            <label for="name">Nombre del producto</label>
+            <input type="text" id="name" autocomplete="off" placeholder="Arroz 1 kg">
+          </div>
+
+          <div class="field">
+            <label for="cost">Costo de compra</label>
+            <input type="number" id="cost" step="0.01" placeholder="1.20">
+            <span class="hint">Lo que te cuesta traerlo, en dólares</span>
+          </div>
+
+          <div class="field">
+            <label for="price">Precio de venta</label>
+            <input type="number" id="price" step="0.01" placeholder="1.60">
+            <span class="hint">A cuánto lo vendes, en dólares</span>
+          </div>
+
+          <div class="field">
+            <label for="stock">Cantidad en bodega</label>
+            <input type="number" id="stock" placeholder="40">
+            <span class="hint">Unidades que tienes ahora mismo</span>
+          </div>
+
+          <div class="field">
+            <label for="sold">Vendidos en el mes</label>
+            <input type="number" id="sold" placeholder="120">
+            <span class="hint">Unidades que vendiste el último mes</span>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Guardar producto</button>
+          <p id="formMessage" class="message"></p>
+        </div>
+      </form>
+
+      <h3>Productos registrados</h3>
+      <div id="productTable"></div>
+    </section>
+
+    <section id="alerts">
+      <p class="eyebrow">Pregunta 1</p>
+      <h2>¿Qué tengo que comprar?</h2>
+      <p class="lead">No importa solo cuánto queda, sino qué tan rápido se vende. Un producto con
+        cinco unidades que rota todos los días es más urgente que uno con cinco que casi no sale.</p>
+      <button class="btn" onclick="showAlerts()">Revisar inventario</button>
+      <div id="alertTable"></div>
+    </section>
+
+    <section id="profit">
+      <p class="eyebrow">Pregunta 2</p>
+      <h2>¿Qué me conviene vender?</h2>
+      <p class="lead">Un producto puede dejar mucho por unidad y venderse poco. Lo que manda es la
+        ganancia del mes completo.</p>
+      <button class="btn" onclick="showProfit()">Calcular rentabilidad</button>
+      <div id="profitTable"></div>
+    </section>
+
+    <section id="breakeven">
+      <p class="eyebrow">Pregunta 3</p>
+      <h2>¿Cuánto vender para no perder?</h2>
+      <p class="lead">El arriendo, la luz y los sueldos se pagan aunque no vendas nada. El punto de
+        equilibrio es el monto de ventas donde el negocio deja de perder.</p>
+
+      <div class="grid">
+        <div class="field">
+          <label for="fixedCost">Gasto fijo del mes</label>
+          <input type="number" id="fixedCost" step="0.01" placeholder="800">
+          <span class="hint">Arriendo, luz, agua y sueldos, en dólares</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="showBreakeven()">Calcular punto de equilibrio</button>
+        <p id="breakevenMessage" class="message"></p>
+      </div>
+
+      <div id="breakevenResult"></div>
+      <div id="breakevenChart"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Proyecto Final Integrador &middot; PUCETEC &middot; Mateo Morejón y Jhon Palma</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/alerts.js"></script>
+  <script src="js/profit.js"></script>
+  <script src="js/breakeven.js"></script>
+</body>
+</html>
