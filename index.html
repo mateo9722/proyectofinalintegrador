@@ -75,6 +75,12 @@
         </div>
       </form>
 
+      <div class="actions">
+        <button type="button" class="btn" onclick="openProductFile()">Cargar productos JSON</button>
+        <input type="file" id="productFile" accept=".json,application/json" hidden>
+        <p id="importMessage" class="message"></p>
+      </div>
+
       <h3>Productos registrados</h3>
       <div id="productTable"></div>
     </section>
@@ -131,6 +137,7 @@
   <script src="js/storage.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/import.js"></script>
   <script src="js/alerts.js"></script>
   <script src="js/profit.js"></script>
   <script src="js/breakeven.js"></script>

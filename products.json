@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Arroz 1 kg",
+        "cost": 1.2,
+        "price": 1.6,
+        "stock": 5,
+        "sold": 120
+    },
+    {
+        "name": "Leche 1 litro",
+        "cost": 0.85,
+        "price": 1.1,
+        "stock": 10,
+        "sold": 30
+    },
+    {
+        "name": "Atún",
+        "cost": 1.5,
+        "price": 2.25,
+        "stock": 2,
+        "sold": 40
+    },
+    {
+        "name": "Galletas",
+        "cost": 0.4,
+        "price": 0.75,
+        "stock": 20,
+        "sold": 0
+    }
+]
